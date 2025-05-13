@@ -1,178 +1,170 @@
-### 📍 Network Address – Samedan
+### Network Address – Samedan
 
 > What is the network address for the Samedan location?
 
 **SHORT ANSWER**
 **192.168.3.0/24**
-The router at Samedan uses `192.168.3.1` as the gateway, placing the entire subnet in `192.168.3.0/24`.
+The IPFire router at Samedan uses `192.168.3.1` as the gateway, which places all local devices in the `192.168.3.0/24` subnet.
 
 ---
 
-### 📡 Access Point – Bellinzona
+### Access Point – Bellinzona
 
 > What IP address is the AccessPoint located at in Bellinzona?
 
 **SHORT ANSWER**
 **192.168.4.253**
-The AP in Bellinzona is a ZyXEL NWA1123-AC with this static IP address on VLAN-3.
+The ZyXEL NWA1123-AC Access Point at Bellinzona is assigned a static IP in VLAN-3.
 
 ---
 
-### 🖥️ VLAN – Workstation PCs
+### VLAN – Workstation PCs
 
 > In which VLAN are the workstation PCs located?
 
 **SHORT ANSWER**
 **VLAN-2: Office**
-All PCs are connected to ports 1–23 on the switches, which are assigned to VLAN-2 (Office).
+All workstation PCs are connected to switch ports 1–23, which are part of VLAN-2 (Office).
 
 ---
 
-### 🔧 Manageable Switch – Chur
+### Manageable Switch – Chur
 
 > What IP address is the manageable switch located at in Chur?
 
 **SHORT ANSWER**
 **192.168.2.253**
-This is the static IP of the ZyXEL manageable switch at the Chur location.
+This IP belongs to the ZyXEL manageable switch located at the Chur main office.
 
 ---
 
-### 🔐 VPN Gateway – Bellinzona
+### VPN Gateway – Bellinzona
 
 > What IP addresses are configured for the LAN side and tunnel side of the VPN gateway at the Bellinzona location?
 
 **SHORT ANSWER**
-**LAN:** `192.168.4.1` | **Tunnel (VPN-B):** `172.200.4.2/24`
-The router handles internal routing and VPN connections to other locations.
+**LAN:** `192.168.4.1`
+**VPN Tunnel (VPN-B):** `172.200.4.2/24`
+The gateway provides local access and secure VPN connectivity to other sites.
 
 ---
 
-### 🌐 Default Gateway – Samedan
+### Default Gateway – Samedan
 
 > What is the default gateway configured for the workstation PCs at the Samedan location?
 
 **SHORT ANSWER**
 **192.168.3.1**
-The router in Samedan is configured as the default gateway for local PCs.
+Configured on the IPFire router, used as the default gateway by all local clients.
 
 ---
 
-### 🧳 VPN for Field Service
+### VPN for Field Service
 
 > A field service employee needs access to the company network. How should they configure their VPN-SW IP address?
 
 **SHORT ANSWER**
-**Use VPN-C (Remote Access) with IP range 172.200.5.0/24**
-The gateway IP is `172.200.5.1`, providing encrypted remote access.
+**Use VPN-C (RAS) within 172.200.5.0/24**
+The gateway IP `172.200.5.1` is used for secure remote access via VPN-C (Remote Access).
 
 ---
 
-### ☎️ VoIP – CAD Water Engineering
+### VoIP – CAD Water Engineering
 
 > Who installed the VoIP phones in the CAD Water Engineering office?
 
 **SHORT ANSWER**
 **abisang**
-According to the patch panel log, abisang installed the VoIP phone on `19.05.14`.
+According to the patch panel documentation, the VoIP installation on `19.05.14` was handled by abisang.
 
 ---
 
-### 🍽️ AccessPoint – Bistro
+### Access Point – Bistro
 
 > When was the AccessPoint installed in the Bistro?
 
 **SHORT ANSWER**
 **10.01.14**
-Two RJ45 outlets are present, and the Access Point was installed on that date. 
-Located in the Bistro (Erdgeschoss, Hauptsitz Chur), according to the Verkabelungsplan and patch list entries
+Installed near the RJ45 outlets in the Bistro (Erdgeschoss, Chur). Installation details appear in the Verkabelungsplan and patch panel log.
 
 ---
 
-### 👨‍💼 Rene Sauter – Leaving the Company
+### Rene Sauter – Leaving the Company
 
 > IT employee Rene Sauter (rsauter) is leaving the company. Which tasks or responsibilities are affected? Who would you suggest as the future contact person for problems?
 
 **SHORT ANSWER**
-**Affected:**
-* Patch panel documentation and port assignments (e.g., E1/1, E2/1, E3/2) were entered or maintained by rsauter. His initials are associated with several workstation and printer installations across the network
-**Suggested successor:** abisang
-rsauter set up many patch ports and hardware. abisang appears active and competent in similar areas. (VoIP, CAD)
+**Affected tasks:**
 
+* Patch panel records
+* Port assignments for PCs and printers (e.g., E1/1, E2/1, E3/2)
 
+**Suggested successor:**
+**abisang** – Actively involved in VoIP and CAD infrastructure.
 
 ---
 
-### 🧮 RJ45 Sockets – Project Manager Office
+### RJ45 Sockets – Project Manager Office
 
 > How many RJ45 sockets are available in the project manager’s office, and how many of them are currently not occupied?
 
 **SHORT ANSWER**
 **6 total**, **1 free**
-the Bauleiterbüro: 6 ports exist (E3–E5); only E3/1 is free.
-
-* Total RJ45 sockets: 6 (E3/1, E3/2, E4/1, E4/2, E5/1, E5/2)
-* Occupied: 5 (All except E3/1 are marked as "Belegt")
-* Free sockets: 1 (→ E3/1)
+Located in the Bauleiterbüro (E3–E5). Only `E3/1` is currently unoccupied.
 
 ---
 
-### 📞 VoIP Phone – CAD Civil Engineering
+### VoIP Phone – CAD Civil Engineering
 
 > In the CAD Civil Engineering office, another VoIP phone needs to be provided. How should this connection be patched? The patch panel configuration and the switch port are required.
 
-* Available RJ45 socket: E2/2 (Free)
-* Patch panel location: E2/2 (CAD Tiefbau)
-* Switch port (Office VLAN): Ports 1–23 in VLAN-2 (Office)
-
-**Patch configuration:**
-
-* Connect E2/2 (Patchpanel) → Switch Port 1–23 (VLAN-2)
-This VLAN is used for both workstation PCs and VoIP phones
+**SHORT ANSWER**
+**Patch Panel:** E2/2
+**Switch Port:** 1–23 (VLAN-2: Office)
+Connect E2/2 on the patch panel to a switch port in VLAN-2 to enable VoIP functionality.
 
 ---
 
-### 🖥️ Ethernet – Bistro Presentation
+### Ethernet – Bistro Presentation
 
 > A project presentation is scheduled in the Bistro. An Ethernet cable connection needs to be provided for this.
 
 **SHORT ANSWER**
-**Use one of the 2 RJ45 sockets and patch it to VLAN-2 (Port 1–23)**
-This ensures standard office Ethernet access for a laptop or presentation device.
+Use one of the two RJ45 outlets in the Bistro and patch it to **VLAN-2 (Port 1–23)**.
+This provides standard office network access.
 
 ---
 
-### 🧑‍💻 Temporary Workstation – CAD Water Engineering
+### Temporary Workstation – CAD Water Engineering
 
 > In the CAD Water Engineering office, a temporary workstation needs to be set up. How would you solve this task?
 
 **SHORT ANSWER**
-**Patch E11/2 to Switch Port 1–23 (VLAN-2)**
-This port is free and provides both DHCP and internet access via Office VLAN.
-
-* Available RJ45 socket: E11/2 (assuming it refers to CAD Wasserbau; status is blank → free)
-* Patch panel: E11/2
-* Switch port: Connect to Port 1–23 (VLAN-2) for standard PC access
+**Patch Panel:** E11/2 (free)
+**Switch Port:** 1–23 (VLAN-2)
 
 **Steps:**
 
-* Patch E11/2 to a switch port in VLAN-2
-* Place a temporary PC at the corresponding outlet
-* DHCP will assign IP via 192.168.2.x or relevant subnet
+1. Patch E11/2 to VLAN-2 switch port
+2. Connect a workstation
+3. DHCP assigns an IP in `192.168.2.x`
 
 ---
 
-### 🖲️ Switches – Chur Location
+### Switches – Chur Location
 
 > How many switches are available at the Chur location?
 
 **SHORT ANSWER**
-**3 total switches**
-Two are stacked ZyXEL XGS1910-24 units, and one standalone XG1910-24 is also present.
+**3 switches total**
+
+* 2x ZyXEL XGS1910-24 (stacked)
+* 1x ZyXEL XG1910-24 (standalone)
 
 ---
 
-### 🚫 No Internet – Mrs. Sommer
+
+### No Internet – Mrs. Sommer
 
 > Mrs. Sommer works at the CAD workstation and reports that she no longer has an internet connection. What will you check?
 
@@ -182,7 +174,7 @@ Ensure she’s patched into VLAN-2, has a valid IP, and can reach `192.168.2.1`.
 
 Since Mrs. Sommer works at a **CAD workstation**, likely located in **CAD Tiefbau** or **CAD Wasserbau**, follow these steps:
 
-#### 🔍 **Checklist for Troubleshooting:**
+#### **Checklist for Troubleshooting:**
 
 1. **Physical Connection (Layer 1):**
 
@@ -212,7 +204,7 @@ Since Mrs. Sommer works at a **CAD workstation**, likely located in **CAD Tiefba
 
 ---
 
-### 📶 SSID – Chur AccessPoint
+### SSID – Chur AccessPoint
 
 > What is the SSID of the Chur AccessPoint?
 
