@@ -211,9 +211,13 @@ Since Mrs. Sommer works at a **CAD workstation**, likely located in **CAD Tiefba
 
 **SHORT ANSWER**
 **Not specified in the documentation**
-The documentation does **not explicitly list** the SSID of the Access Point. However:
+The documentation does **not explicitly list** the SSID of the Access Point.
 
-* ZyXEL NWA1123-AC units are used
-* Configured in **VLAN-2 (Office)** and **VLAN-3**
-* The SSID is likely internal (e.g., `Caprez_Office`) but not documented
+<details>
+  <summary>Click here to see my own additional thinking</summary>
 
+  * ZyXEL NWA1123-AC units are used
+  * Configured in **VLAN-2 (Office)** and **VLAN-3**
+  * The SSID is likely internal (e.g., `Caprez_Office`) but not documented
+
+</details>
