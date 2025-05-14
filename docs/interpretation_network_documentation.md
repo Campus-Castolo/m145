@@ -13,7 +13,7 @@ The IPFire router at Samedan uses `192.168.3.1` as the gateway, which places all
 > What IP address is the AccessPoint located at in Bellinzona?
 
 **SHORT ANSWER**
-**192.168.4.253**
+**192.168.4.30**
 The ZyXEL NWA1123-AC Access Point at Bellinzona is assigned a static IP in VLAN-3.
 
 ---
@@ -84,8 +84,8 @@ According to the patch panel documentation, the VoIP installation on `19.05.14` 
 > When was the AccessPoint installed in the Bistro?
 
 **SHORT ANSWER**
-**10.01.14**
-Installed near the RJ45 outlets in the Bistro (Erdgeschoss, Chur). Installation details appear in the Verkabelungsplan and patch panel log.
+**23.07.14**
+Installed by `rsauter` via patch panel port `E8/1`. Installation details appear in the Verkabelungsplan and patch panel log.
 
 ---
 
@@ -96,11 +96,15 @@ Installed near the RJ45 outlets in the Bistro (Erdgeschoss, Chur). Installation 
 **SHORT ANSWER**
 **Affected tasks:**
 
-* Patch panel records
-* Port assignments for PCs and printers (e.g., E1/1, E2/1, E3/2)
+* Patch panel records and cabling for:
 
-**Suggested successor:**
-**abisang** – Actively involved in VoIP and CAD infrastructure.
+  * Empfang EG PC (E1/11)
+  * CAD Tiefbau (E2/1)
+  * MF-Kopierer (E3/2)
+  * Bistro AccessPoint (E8/1)
+
+**Suggested successors:**
+**blaeuchli**, **abisang**, **rkundert** – All actively involved in infrastructure and support.
 
 ---
 
@@ -109,8 +113,8 @@ Installed near the RJ45 outlets in the Bistro (Erdgeschoss, Chur). Installation 
 > How many RJ45 sockets are available in the project manager’s office, and how many of them are currently not occupied?
 
 **SHORT ANSWER**
-**6 total**, **1 free**
-Located in the Bauleiterbüro (E3–E5). Only `E3/1` is currently unoccupied.
+**8 total**, **2 free**
+Located in the Bauleiterbüro from `E3/1` to `E6/2`. Two of the eight RJ45 sockets are currently unoccupied.
 
 ---
 
@@ -119,9 +123,9 @@ Located in the Bauleiterbüro (E3–E5). Only `E3/1` is currently unoccupied.
 > In the CAD Civil Engineering office, another VoIP phone needs to be provided. How should this connection be patched? The patch panel configuration and the switch port are required.
 
 **SHORT ANSWER**
-**Patch Panel:** E2/2
-**Switch Port:** 1–23 (VLAN-2: Office)
-Connect E2/2 on the patch panel to a switch port in VLAN-2 to enable VoIP functionality.
+**Patch Panel:** E2/3
+**Switch Port:** 24–47 (VLAN-1: Phone)
+Connect E2/3 on the patch panel to a switch port in VLAN-1 to enable VoIP functionality.
 
 ---
 
@@ -130,7 +134,7 @@ Connect E2/2 on the patch panel to a switch port in VLAN-2 to enable VoIP functi
 > A project presentation is scheduled in the Bistro. An Ethernet cable connection needs to be provided for this.
 
 **SHORT ANSWER**
-Use one of the two RJ45 outlets in the Bistro and patch it to **VLAN-2 (Port 1–23)**.
+Use one of the RJ45 outlets in the Bistro (e.g., `E9/1` or `E9/2`) and patch it to **VLAN-2 (Port 1–23)**.
 This provides standard office network access.
 
 ---
@@ -140,14 +144,14 @@ This provides standard office network access.
 > In the CAD Water Engineering office, a temporary workstation needs to be set up. How would you solve this task?
 
 **SHORT ANSWER**
-**Patch Panel:** E11/2 (free)
-**Switch Port:** 1–23 (VLAN-2)
+Use a free RJ45 socket from the patch panel, connect it to **VLAN-2 (Port 1–23)**
 
 **Steps:**
 
-1. Patch E11/2 to VLAN-2 switch port
-2. Connect a workstation
-3. DHCP assigns an IP in `192.168.2.x`
+1. Select a free patch port (e.g., `E11/2`)
+2. Patch it to a switch port in VLAN-2
+3. Connect workstation
+4. DHCP assigns an IP in `192.168.2.x`
 
 ---
 
@@ -156,20 +160,18 @@ This provides standard office network access.
 > How many switches are available at the Chur location?
 
 **SHORT ANSWER**
-**3 switches total**
+**2 switches total**
 
 * 2x ZyXEL XGS1910-24 (stacked)
-* 1x ZyXEL XG1910-24 (standalone)
 
 ---
-
 
 ### No Internet – Mrs. Sommer
 
 > Mrs. Sommer works at the CAD workstation and reports that she no longer has an internet connection. What will you check?
 
 **SHORT ANSWER**
-**Check cable, patchpanel port (E2/1), switch port, DHCP lease, and default gateway**
+**Check cable, patchpanel port (e.g., E2/1), switch port, DHCP lease, and default gateway**
 Ensure she’s patched into VLAN-2, has a valid IP, and can reach `192.168.2.1`.
 
 Since Mrs. Sommer works at a **CAD workstation**, likely located in **CAD Tiefbau** or **CAD Wasserbau**, follow these steps:
@@ -184,23 +186,22 @@ Since Mrs. Sommer works at a **CAD workstation**, likely located in **CAD Tiefba
 
 2. **Patchpanel & Switch (Layer 2):**
 
-   * Verify that the patchpanel port (e.g., `E2/1`) is still patched to a **switch port** in **VLAN-2: Office** (Port 1–23).
+   * Verify that the patchpanel port is patched to a **switch port** in **VLAN-2: Office** (Port 1–23).
    * Ensure switch port is active and link LED is on.
 
 3. **IP Configuration (Layer 3):**
 
-   * Check if the workstation has a valid IP address in the expected subnet (`192.168.2.x` for Chur).
+   * Check if the workstation has a valid IP in `192.168.2.x`.
    * Ping the **gateway (192.168.2.1)** and **DNS (192.168.2.3)**.
 
 4. **DHCP Status:**
 
-   * Make sure DHCP is functioning.
-   * Router/Firewall in Chur handles DHCP on `192.168.2.3` – verify if lease is assigned.
+   * Ensure DHCP on `192.168.2.3` is assigning leases.
 
 5. **User Device:**
 
    * Restart network adapter.
-   * Run `ipconfig /renew` or check logs for driver or software issues.
+   * Run `ipconfig /renew`, check for software/driver issues.
 
 ---
 
@@ -212,6 +213,7 @@ Since Mrs. Sommer works at a **CAD workstation**, likely located in **CAD Tiefba
 **Not specified in the documentation**
 The documentation does **not explicitly list** the SSID of the Access Point. However:
 
-* It **shows the Access Points** are ZyXEL NWA1123-AC units.
-* These are configured in **VLAN-2 (Office)** and **VLAN-3**.
-* The SSID is likely broadcast for internal employee use, but the exact SSID (e.g., `Caprez_Office`) is **not mentioned in the provided network diagram or documentation**.
+* ZyXEL NWA1123-AC units are used
+* Configured in **VLAN-2 (Office)** and **VLAN-3**
+* The SSID is likely internal (e.g., `Caprez_Office`) but not documented
+
