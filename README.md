@@ -13,6 +13,6 @@ Operate and expand networks
 | GNS3 - Wireshark                     | Block 5     | ⬜        |                  |                     | Packet analysis with Wireshark in GNS3    |
 | BeASwitch with VLAN                  | Block 6     | ✅        |                  | 13.05.2025          | VLAN configuration on switches            |
 | GNS3 - VLAN                          | Block 7     | ⬜        |                  |                     | VLAN implementation in GNS3               |
-| Cisco Packet Tracer - VLAN           | Block 8     | ⬜        |                  |                     | VLAN setup in Cisco Packet Tracer         |
+| Cisco Packet Tracer - VLAN           | Block 8     | ✅        |                  |                     | VLAN setup in Cisco Packet Tracer         |
 | WLAN - Own Apartment                 | —           | ✅        |                  | 18.05.2025          | WLAN planning for your own home           |
 
