@@ -148,7 +148,7 @@ Use a free RJ45 socket from the patch panel, connect it to **VLAN-2 (Port 1–23
 
 **Steps:**
 
-1. Select a free patch port (e.g., `E11/2`)
+1. Select a free patch port (e.g., `E11/1`)
 2. Patch it to a switch port in VLAN-2
 3. Connect workstation
 4. DHCP assigns an IP in `192.168.2.x`
