@@ -10,9 +10,9 @@ Operate and expand networks
 | IPv4 Quiz                            | Block 3     | ✅        |                  | 13.05.2025          | Quiz on IPv4 concepts                     |
 | Cisco Packet Tracer - Repetition     | Block 4     | ✅        |                  | 19.05.2025          | Review of previous Packet Tracer work     |
 | Network Documentation - Interpretation | Block 5   | ✅        |                  | 13.05.2025          | Understanding network documentation tasks |
-| GNS3 - Wireshark                     | Block 5     | ⬜        |                  |                     | Packet analysis with Wireshark in GNS3    |
+| GNS3 - Wireshark                     | Block 5     | ✅        |                  | 08.05.2025          | Packet analysis with Wireshark in GNS3    |
 | BeASwitch with VLAN                  | Block 6     | ✅        |                  | 13.05.2025          | VLAN configuration on switches            |
-| GNS3 - VLAN                          | Block 7     | ⬜        |                  |                     | VLAN implementation in GNS3               |
-| Cisco Packet Tracer - VLAN           | Block 8     | ✅        |                  |                     | VLAN setup in Cisco Packet Tracer         |
+| GNS3 - VLAN                          | Block 7     | ✅        |                  | 08.05.2025          | VLAN implementation in GNS3               |
+| Cisco Packet Tracer - VLAN           | Block 8     | ✅        |                  | 08.05.2025          | VLAN setup in Cisco Packet Tracer         |
 | WLAN - Own Apartment                 | —           | ✅        |                  | 18.05.2025          | WLAN planning for your own home           |
 
